@@ -1,0 +1,102 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Login Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<style type="text/css">
+    body{
+    background:url("{% static 'jot3.jpg' %}");background-size:cover;
+   }
+
+.vertical-offset-100{
+    padding-top:100px;
+}
+input[type="text"] {
+
+	margin-bottom: 25px;
+	width: 100%;
+	border: 3px solid steelblue;
+	background: #FAF6D9;
+}
+input[type="password"] {
+
+	margin-bottom: 25px;
+	width: 100%;
+	border: 3px solid steelblue;
+	background: #FAF6D9;
+}
+input[type="submit"] {
+
+	margin-bottom: 25px;
+	width: 100%;
+	border: 3px solid steelblue;
+	background: #FAF6D9;
+	padding:15px;
+</style>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        window.alert = function(){};
+        var defaultCSS = document.getElementById('bootstrap-css');
+        function changeCSS(css){
+            if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />');
+            else $('head > link').filter(':first').replaceWith(defaultCSS);
+        }
+        $( document ).ready(function() {
+          var iframe_height = parseInt($('html').height());
+          window.parent.postMessage( iframe_height, 'https://bootsnipp.com');
+        });
+    </script>
+</head>
+<body>
+    <script src="https://mymaplist.com/js/vendor/TweenLite.min.js"></script>
+<!-- This is a very simple parallax effect achieved by simple CSS 3 multiple backgrounds, made by http://twitter.com/msurguy -->
+
+<div class="container">
+    <div class="row vertical-offset-100">
+    	<div class="col-md-4 col-md-offset-4">
+    		<div class="panel panel-default">
+			  	<div class="panel-heading" style="background-color:light grey;">
+			    	<h1 class="panel-title" style="color:navy;">Meddling login</h1>
+			 	</div>
+			  	<div class="panel-body" style="background-color:lightgey;">
+			    	<form method="post">
+						{% csrf_token %}
+
+			    	  	<div class="form-group">
+			    		    <input class="form-control" placeholder="Username" name="username" type="text">
+			    		</div>
+			    		<div class="form-group">
+			    			<input class="form-control" placeholder="Password" name="password" type="password">
+			    		</div>
+			    		<div class="checkbox">
+			    	    	<label>
+			    	    		<input name="remember" type="checkbox" value="Remember Me"> Remember Me
+			    	    	</label>
+			    	    </div>
+						<h3><input class="" type="submit" value="Login"></h3>
+					</form>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>	<script type="text/javascript">
+	$(document).ready(function(){
+  $(document).mousemove(function(e){
+     TweenLite.to($('body'),
+        .5,
+        { css:
+            {
+                backgroundPosition: ""+ parseInt(event.pageX/8) + "px "+parseInt(event.pageY/'12')+"px, "+parseInt(event.pageX/'15')+"px "+parseInt(event.pageY/'15')+"px, "+parseInt(event.pageX/'30')+"px "+parseInt(event.pageY/'30')+"px"
+            }
+        });
+  });
+});	</script>
+</body>
+</html>
+
+

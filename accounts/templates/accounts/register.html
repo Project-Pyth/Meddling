@@ -1,0 +1,101 @@
+{% load static %}
+<head>
+   <title>Register Form</title>
+   <style type="text/css">
+   body{
+	background:url("{% static 'jot3.jpg' %}");
+	font:1em/1.5 sans-serif;background-size:cover;
+}
+h1{
+    	text-align: center;
+   	font-size: 50px;
+   	color: steelblue;
+}
+form {
+	margin: 20px auto;
+ 	width: 320px;
+	color: steelblue;
+
+}
+input {
+	padding: 10px;
+	front-size: inherit;
+}
+input[type="text"] {
+
+	margin-bottom: 25px;
+	width: 100%;
+	border: 3px solid steelblue;
+	background: #FAF6D9;
+}
+input[type="password"] {
+
+	margin-bottom: 25px;
+	width: 100%;
+	border: 2px solid steelblue;
+	background: #FAF6D9;
+}
+input[type="email"] {
+	margin-bottom: 25px;
+	width: 100%;
+	border: 2px solid steelblue;
+	background: #FAF6D9;
+}
+input[type="radio"] {
+	margin: 0 8px 25px 18px;
+}
+input[type="radio"]:first-child{
+	margin-left: 0;
+}
+input[type="register here"] {
+	width: 323px;
+	height: 50px;
+	border: 2px;
+	background: steelblue;
+	color: white;
+ }
+input[type="register here"]:focus {
+	width: 323px;
+	height: 50px;
+	border: solid steelblue;
+	background: white;
+	color: steelblue;
+ }
+input:focus{
+	background: white;
+}
+input[type="radio"]:checked + label {
+	font-weight: bold;
+	font-size: 18px;
+ }
+</style>
+</head>
+<body>
+	<h1>Registration Form</h1>
+<form action="" method="post">
+	{% csrf_token %}
+	<input type="text" placeholder="first_name" name="first_name">
+	<input type="text" placeholder="last_name" name="last_name">
+	<input type="text" placeholder="username" name="username">
+	<input type="email" placeholder="email" name="email">
+	<input type="password" placeholder="password" name="password">
+	<input type="password" placeholder="confirm password" name="password2">
+
+<div>
+	<!--<input type="radio"id="Male" name="gender"><label for="Male">Male</label>-->
+	<!--input type="radio"id="Female" name="gender"><label for="Female">Female</label>-->
+
+
+<input type="submit" name="register here" value="register here">
+	{% for message in messages %}
+                                            {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                                                <p style="color: solid navy;">{{ message }}</p>
+                                            {% endif %}
+                                        {% endfor %}
+
+</div>
+
+</form>
+</body>
+</html>
+

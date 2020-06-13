@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="margin-left: 20%; background-image:url('{% static 'jot3.jpg' %}');background-repeat:no-repeat;background-size:cover;">
+{% for i in cat %}
+    <a href="{% url 'accounts:pdf' i.pk %}">{{ i.categ_name }}</a><br><br>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Change</title>
+</head>
+<body style="background-image:url('{% static 'jot9.jpg' %}');background-repeat:no-repeat;background-size:cover;">
+<form method="POST">
+    {% csrf_token %}
+    {{form|crispy}}
+    <button type="submit"><h2>Change Password</h2></button>
+
+</form>
+
+</body>
+</html>
+
+{% endblock %}

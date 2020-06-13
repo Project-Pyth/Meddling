@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+<head>
+    <title>poioo</title>
+
+        </head>
+        <body>
+        <div class="reg">
+        <h1>registration form</h1>
+        <form method="Post" >
+        {% csrf_token %}
+        <input type="text" name="first_name" placeholder="enter first name"required><br><br>
+        <input type="text" name="last_name" placeholder="enter last name"required><br><br>
+        <input type="text" name="username" placeholder="enter user name"required><br><br>
+        <input type="email" name="Email" placeholder="enter email example@gmail.com"required><br><br>
+        <input type="password" name="password" placeholder="enter password "required><br><br>
+        <input type="password" name="password2" placeholder="Re-enter password"required><br><br>
+
+        <input type="submit" value="Register Here......">
+        </form>
+        </form>
+        </div>
+
+        </body>
+        </html>
+
+
+
